@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>URL Shortener Microservice</title>
+    <meta name="description" content="URL Shortener Microservice challenge" />
+    <meta
+      name="keywords"
+      content="HTML, CSS, JavaScript, Node, Express, MongoDB, Mongoose"
+    />
+    <meta name="author" content="Davor Jovanovic" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.freecodecamp.org/universal/favicons/favicon-16x16.png"
+    />
+    <link href="/public/style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h1>URL Shortener Microservice</h1>
+    <main>
+      <section>
+        <form action="api/shorturl" method="POST">
+          <fieldset>
+            <legend>URL Shortener</legend>
+            <label for="url_input">URL:</label>
+            <input
+              id="url_input"
+              type="text"
+              name="url"
+              placeholder="https://www.freecodecamp.org/"
+            />
+            <input type="submit" value="POST URL" />
+          </fieldset>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>
+        By
+        <a href="https://www.linkedin.com/in/davor-jovanovi%C4%87/">DavorJ</a>
+        For <a href="https://www.freecodecamp.org/">FCC Challenges</a>
+      </p>
+    </footer>
+  </body>
+</html>
