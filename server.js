@@ -9,8 +9,7 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 
-const dburi =
-  "mongodb+srv://DavorJFCC:sOBVYU441rEsO3or@cluster0.spyk0.mongodb.net/urlShortener?retryWrites=true&w=majority";
+const dburi = process.env.DB_URI;
 
 mongoose
   .connect(dburi, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -61,7 +60,7 @@ app.post("/api/shorturl", (req, res) => {
   }
 
   const httpRegex = /^(http|https)(:\/\/)/;
-  if (!httpRegex.test(req.res.body)) {
+  if (!httpRegex.test(req.body.url)) {
     return res.json({ error: "invalid url" });
   }
   dns.lookup(domain.host, (err) => {
